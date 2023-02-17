@@ -1,0 +1,20 @@
+@import '../../styles/variables.scss';
+.links{
+    font-family: $font-inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: $dark-gray;
+    transition: 0.4s all;
+    &--dark{
+        color: $primary-light-gray;
+        &:hover{
+            color: $primary-white;
+        }
+    }
+    &:not(.links--dark){
+        &:hover{
+            color: $primary-black;
+        }
+    }
+}

@@ -1,0 +1,222 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.button {
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s all;
+  @include font-inter-700;
+  font-size: 12px;
+  &__default{
+    padding: 16px 75px;
+    color: $primary-white;
+    background-color: $primary-black;
+    border-radius: 30px;
+    &:not(:disabled){
+      &:hover, &:focus{
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+      }
+    }
+    &--dark{
+    background-color: $accent-gold;
+    &:not(:disabled){
+      &:hover,&:focus{
+        color: $primary-white;
+        box-shadow: 0px 4px 10px rgba(171, 137, 86, 0.25);
+      }
+    }
+    } 
+    &:disabled{
+      opacity: 0.5;
+      cursor: default;
+    }
+    &--outlined{  
+      background-color: transparent;
+      outline: 1px solid $dark-gray;
+      color: $dark-gray;
+    }
+  }
+  &__text{
+    @include flex-all-center;
+    gap: 12px;
+    color: $dark-gray;
+    a{
+      color: $dark-gray;
+    }
+    padding: 0; 
+    background: none;
+    &:not(&:disabled){
+      &:hover, &:focus{
+        color: $primary-black;
+        a{
+          color: $primary-black;
+        }
+        svg{
+          path{
+            fill: $primary-black;
+          }
+        }
+        box-shadow: 0px;
+      }
+    }
+    &:disabled{
+      cursor: default;
+      color: $primary-light-gray;
+      a{
+        color: $primary-light-gray;
+        cursor: default;
+      }
+    }
+    &--dark{
+      color: $primary-light-gray;
+      a{
+        color: $primary-light-gray;
+      }
+      svg{
+        path{
+          fill: $primary-light-gray;
+        }
+      }
+      &:not(&:disabled){
+        &:hover, &:focus{
+          color: $primary-white;
+          svg{
+            path{
+              fill: $primary-white
+            }
+          }
+          a{
+            color: $primary-white;
+          }
+        }
+      }
+      &:disabled{
+        color: $secondary-gray;
+      }
+    }
+  }
+  &__trash{
+    padding: 6px;
+    border-radius: 4px;
+    background-color:$primary-white;
+    svg{
+      path{
+        fill: $dark-gray;
+      }
+    }
+    &--boi{
+      opacity: 0.5;
+    }
+    &:not(:disabled){
+      &:hover, &:focus{
+        svg{
+          path{
+            fill: $primary-black;
+          }
+        }
+      }
+    }
+    &:disabled{
+      cursor: default;
+      svg{
+        path{
+          fill: $dark-gray;
+        }
+      }
+    }
+    &--dark{
+      background-color: $secondary-black;
+      svg{
+        path{
+          fill: $primary-light-gray;
+        }
+      }
+      &.button__trash--boi{
+        opacity: 1;
+        background: none;
+        &:hover, &:focus{
+          svg{
+            path{
+              fill: black;
+            }
+          }
+        }
+      }
+      &:not(:disabled){
+        &:hover, &:focus{
+          svg{
+            path{
+              fill: $primary-white;
+            }
+          }
+        }
+      }
+      &:disabled{
+        svg{
+          path{
+            fill: $primary-light-gray;
+          }
+        }
+      }
+    }
+  }
+  &__theme{
+    svg{
+      path{
+        fill: $dark-gray;
+      }
+    }
+    &:hover{
+      svg{
+        path{
+          fill: $primary-black;
+        }
+      }
+    }
+    &--dark{
+      background-color: $secondary-black;
+      border-radius: 100%;
+      width: 40px;
+      height: 40px; 
+      svg{
+        path{
+          fill: $primary-light-gray;
+        }
+      }
+      &:not(:disabled){
+        &:hover{
+          svg{
+            path{
+              fill: $primary-white;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__circle{
+    background-color: $secondary-white;
+    border: 1px solid $primary-light-gray;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    svg{
+      path{
+        fill: $dark-gray;
+      }
+    }
+    &--dark{
+      border-color: $secondary-black;
+      background-color: $secondary-black;
+      svg{
+        path{
+          fill: $primary-white; 
+        }
+      }
+      &:hover{
+        background-color: #242222;
+      } 
+    }
+  }
+}
