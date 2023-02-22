@@ -1,19 +1,25 @@
+import useTheme from '../../hooks/useTheme';
+import { newGuid } from '../../utils/guid'; 
 import cn  from 'classnames';
+import Card from '../Card';
 import './style.scss';
 
 interface IPropsGrid {
-  artists: string[]
+  artists: any[]
 }
-
-export const Grid = ({artists}:IPropsGrid) => {
+const Grid = ({artists}:IPropsGrid) => {
+  const { isDark } = useTheme();
+  
   return (
-    <div className={cn('grid')}>
-        <div> 123 </div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>12333</div>
-        <div>1412</div>
-    </div>
+    <ul className={cn('grid')}>
+        {artists.map((artist)=> {
+          return (
+            <Card key={newGuid()} isDark={isDark} thumbnail={artist.thumbnail} name={artist.name} 
+              dateFirst={artist.dateFirst} dateSecond={artist.dateSecond}
+            />
+          )
+        })}
+    </ul>
   );
 };
+export default Grid;

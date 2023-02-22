@@ -1,9 +1,8 @@
 import './style.scss';
 
 const App = () => {
-	return (  
-		<div>
-			
+	return (
+		<div className="app">
 		</div>
 	);
 };

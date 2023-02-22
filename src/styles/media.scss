@@ -8,7 +8,7 @@
         @content;
     }
 }
-@mixin mini-desktop {
+@mixin miniDesktop {
     @media (min-width: 1024px) {
         @content;
     }
@@ -28,7 +28,7 @@
         @content;
     }
 }
-@mixin mini-mobile{
+@mixin miniMobile{
     @media (min-width: 320px){
         @content;
     }
