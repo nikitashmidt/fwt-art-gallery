@@ -16,48 +16,47 @@ import { ReactComponent as Logo } from './resources/logo.svg';
 import './style.scss';
 
 export type IconType =
-	| 'Arrow'
-	| 'ArrowDown'
-	| 'LightTheme'
-	| 'BackButton'
-	| 'DarkTheme'
-	| 'Facebook'
-	| 'ReadMore'
-	| 'Inst'
-	| 'Vk'
-	| 'Hamburger'
-	| 'CloseBtn'
-	| 'Logo';
+  | 'Arrow'
+  | 'ArrowDown'
+  | 'LightTheme'
+  | 'BackButton'
+  | 'DarkTheme'
+  | 'Facebook'
+  | 'ReadMore'
+  | 'Inst'
+  | 'Vk'
+  | 'Hamburger'
+  | 'CloseBtn'
+  | 'Logo';
 
 const iconTypes = new Map([
-	['Arrow', <Arrow key={newGuid()} />],
-	['ArrowDown', <ArrowDown key={newGuid()} />],
-	['LightTheme', <LightTheme key={newGuid()} />],
-	['BackButton', <BackButton key={newGuid()} />],
-	['DarkTheme', <DarkTheme key={newGuid()} />],
-	['Facebook', <Facebook key={newGuid()} />],
-	['ReadMore', <ReadMore key={newGuid()} />],
-	['Inst', <Inst key={newGuid()} />],
-	['Vk', <Vk key={newGuid()} />],
-	['Hamburger', <Hamburger key={newGuid()} />],
-	['CloseBtn', <CloseBtn key={newGuid()} />],
-	['Logo', <Logo key={newGuid()} />],
+  ['Arrow', <Arrow key={newGuid()} />],
+  ['ArrowDown', <ArrowDown key={newGuid()} />],
+  ['LightTheme', <LightTheme key={newGuid()} />],
+  ['BackButton', <BackButton key={newGuid()} />],
+  ['DarkTheme', <DarkTheme key={newGuid()} />],
+  ['Facebook', <Facebook key={newGuid()} />],
+  ['ReadMore', <ReadMore key={newGuid()} />],
+  ['Inst', <Inst key={newGuid()} />],
+  ['Vk', <Vk key={newGuid()} />],
+  ['Hamburger', <Hamburger key={newGuid()} />],
+  ['CloseBtn', <CloseBtn key={newGuid()} />],
+  ['Logo', <Logo key={newGuid()} />],
 ]);
 
 export interface IIconProps extends DOMAttributes<HTMLDivElement> {
-	className?: string;
-	type: IconType;
+  type: IconType;
+  className?: string;
 }
 
 const getIcon = (type: IconType): JSX.Element =>
-	iconTypes.get(type) as JSX.Element;
+  iconTypes.get(type) as JSX.Element;
 
-export const Icon: FC<IIconProps> = ({ className, type, ...props }) => {
-	return (
-		<div
-			className={cn('Icon', className)}
-			{...props}>
-			{getIcon(type)}
-		</div>
-	);
+const Icon: FC<IIconProps> = ({ className, type, ...props }) => {
+  return (
+    <div className={cn('Icon', className)} {...props}>
+      {getIcon(type)}
+    </div>
+  );
 };
+export default Icon;

@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Grid  from '../ui/Grid/';
+import Grid from '../ui/Grid/';
 
 export default {
   title: 'Example/Grid',
@@ -12,5 +12,3 @@ export default {
 const Template: ComponentStory<typeof Grid> = (args) => <Grid {...args} />;
 
 export const LoggedOut = Template.bind({});
-
-

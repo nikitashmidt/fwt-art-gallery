@@ -1,196 +1,189 @@
 @import '../../styles';
 
 .button {
-	text-transform: uppercase;
-	border: none;
-	cursor: pointer;
-	transition: 0.5s all;
-	@include font-inter-700;
-	font-size: 12px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s all;
+  @include font-inter-700;
+  font-size: 12px;
 
-	&__default {
-		padding: 16px 75px;
-		color: $primary-white;
-		background-color: $primary-black;
-		border-radius: 30px;
+  &__default {
+    padding: 16px 75px;
+    color: $primary-white;
+    background-color: $primary-black;
+    border-radius: 30px;
 
-		&:not(&.button__default--disabled) {
-			&:hover,
-			&:focus {
-				box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-			}
-		}
+    &:not(&.button__default--disabled) {
+      &:hover,
+      &:focus {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+      }
+    }
 
-		&--dark {
-			background-color: $accent-gold;
+    &--dark {
+      background-color: $accent-gold;
 
-			&:not(&.button__default--disabled) {
-				&:hover,
-				&:focus {
-					color: $primary-white;
-					box-shadow: 0px 4px 10px rgba(171, 137, 86, 0.25);
-				}
-			}
-		}
+      &:not(&.button__default--disabled) {
+        &:hover,
+        &:focus {
+          color: $primary-white;
+          box-shadow: 0px 4px 10px rgba(171, 137, 86, 0.25);
+        }
+      }
+    }
 
-		&--disabled {
-			opacity: 0.5;
-			cursor: default;
-		}
+    &--disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
 
-		&--outlined {
-			background-color: transparent;
-			outline: 1px solid $dark-gray;
-			color: $dark-gray;
-		}
-	}
-
-	&__text {
-		@include flex-all-center;
-		gap: 12px;
-		color: $dark-gray;
+  &__text {
+    @include flex-all-center;
+    gap: 12px;
+    color: $dark-gray;
     padding: 0;
-		background: none;
+    background: none;
 
-		a {
-			color: $dark-gray;
-		}
+    a {
+      color: $dark-gray;
+    }
 
-		&:not(&.button__text--disabled) {
-			&:hover,
-			&:focus {
-				color: $primary-black;
-				a {
-					color: $primary-black;
-				}
-        @include svgPathColor($primary-black);
-				box-shadow: 0px;
-			}
-		}
+    &:not(&.button__text--disabled) {
+      &:hover,
+      &:focus {
+        color: $primary-black;
+        a {
+          color: $primary-black;
+        }
+        @include svgChangeFill($primary-black);
+        box-shadow: 0px;
+      }
+    }
 
-		&--disabled {
-			cursor: default;
-			color: $primary-light-gray;
-			a {
-				color: $primary-light-gray;
-				cursor: default;
-			}
-		}
+    &--disabled {
+      cursor: default;
+      color: $primary-light-gray;
+      a {
+        color: $primary-light-gray;
+        cursor: default;
+      }
+    }
 
-		&--dark {
-			color: $primary-light-gray;
-			a {
-				color: $primary-light-gray;
-			}
-      @include svgPathColor($primary-light-gray);
-			
+    &--dark {
+      color: $primary-light-gray;
+      a {
+        color: $primary-light-gray;
+      }
+      @include svgChangeFill($primary-light-gray);
 
-			&:not(&.button__text--disabled) {
-				&:hover,
-				&:focus {
-					color: $primary-white;
-          @include svgPathColor($primary-white);
-					a {
-						color: $primary-white;
-					}
-				}
-			}
+      &:not(&.button__text--disabled) {
+        &:hover,
+        &:focus {
+          color: $primary-white;
+          @include svgChangeFill($primary-white);
+          a {
+            color: $primary-white;
+          }
+        }
+      }
 
-			&.button__text--disabled {
-				color: $secondary-gray;
-			}
-		}
-	}
+      &.button__text--disabled {
+        color: $secondary-gray;
+      }
+    }
+  }
 
-	&__trash {
-		padding: 6px;
-		border-radius: 4px;
-		background-color: $primary-white;
-    @include svgPathColor($dark-gray);
+  &__trash {
+    padding: 6px;
+    border-radius: 4px;
+    background-color: $primary-white;
+    @include svgChangeFill($dark-gray);
 
-		&--boi {
-			opacity: 0.5;
-		}
+    &--boi {
+      opacity: 0.5;
+    }
 
-		&:not(:disabled) {
-			&:hover,
-			&:focus {
-        @include svgPathColor($primary-black);
-			}
-		}
+    &:not(:disabled) {
+      &:hover,
+      &:focus {
+        @include svgChangeFill($primary-black);
+      }
+    }
 
-		&.button__trash--disabled {
-			cursor: default;
-      @include svgPathColor($dark-gray);
-		}
+    &.button__trash--disabled {
+      cursor: default;
+      @include svgChangeFill($dark-gray);
+    }
 
-		&--dark {
-			background-color: $secondary-black;
-      @include svgPathColor($primary-light-gray);
+    &--dark {
+      background-color: $secondary-black;
+      @include svgChangeFill($primary-light-gray);
 
-			&.button__trash--boi {
-				opacity: 1;
-				background: none;
-				&:hover,
-				&:focus {
-          @include svgPathColor($primary-black);
-				}
-			}
+      &.button__trash--boi {
+        opacity: 1;
+        background: none;
+        &:hover,
+        &:focus {
+          @include svgChangeFill($primary-black);
+        }
+      }
 
-			&:not(.button__trash--disabled) {
-				&:hover,
-				&:focus {
-          @include svgPathColor($primary-white);
-				}
-			}
+      &:not(.button__trash--disabled) {
+        &:hover,
+        &:focus {
+          @include svgChangeFill($primary-white);
+        }
+      }
 
-			&.button__trash--disabled {
-        @include svgPathColor($primary-light-gray);
-			}
-		}
-	}
+      &.button__trash--disabled {
+        @include svgChangeFill($primary-light-gray);
+      }
+    }
+  }
 
-	&__theme {
-    @include svgPathColor($dark-gray);
+  &__theme {
+    @include svgChangeFill($dark-gray);
 
-		&:hover {
-      @include svgPathColor($primary-black);
-		}
+    &:hover {
+      @include svgChangeFill($primary-black);
+    }
 
-		&--dark {
-			background-color: $secondary-black;
-			border-radius: 100%;
-			width: 40px;
-			height: 40px;
+    &--dark {
+      background-color: $secondary-black;
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
 
-			@include svgPathColor($primary-light-gray);
+      @include svgChangeFill($primary-light-gray);
 
-			&:not(&.button__theme--disabled) {
-				&:hover {
-          @include svgPathColor($primary-white);
-				}
-			}
-		}
-	}
-  
-	&__circle {
-		background-color: $secondary-white;
-		border: 1px solid $primary-light-gray;
-		border-radius: 100%;
-		width: 60px;
-		height: 60px;
+      &:not(&.button__theme--disabled) {
+        &:hover {
+          @include svgChangeFill($primary-white);
+        }
+      }
+    }
+  }
 
-		@include svgPathColor($dark-gray);
+  &__circle {
+    background-color: $secondary-white;
+    border: 1px solid $primary-light-gray;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
 
-		&--dark {
-			border-color: $secondary-black;
-			background-color: $secondary-black;
+    @include svgChangeFill($dark-gray);
 
-      @include svgPathColor($primary-white);
+    &--dark {
+      border-color: $secondary-black;
+      background-color: $secondary-black;
 
-			&:hover {
-				background-color: #242222;
-			}
-		}
-	}
+      @include svgChangeFill($primary-white);
+
+      &:hover {
+        background-color: #242222;
+      }
+    }
+  }
 }

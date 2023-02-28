@@ -2,39 +2,24 @@ import cn from 'classnames';
 import './style.scss';
 
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	onClick?: () => void;
-	isDark: boolean;
-	isOutlined?: boolean;
-	isDisabled?: boolean;
-	className:
-		| 'button__default'
-		| 'button__text'
-		| 'button__trash'
-		| 'button__theme'
-		| 'button__circle';
-	isBtnOverImage?: boolean;
+  onClick?: () => void;
+  isDark: boolean;
+  className: string;
+  isFilled: boolean;
 }
 
 export const Button = ({
-	onClick,
-	isDark,
-	isOutlined,
-	isDisabled,
-	children,
-	className,
-	isBtnOverImage,
+  onClick,
+  isDark,
+  className,
+  children,
 }: IButtonProps) => {
-	return (
-		<button
-			className={cn('button', 
-            {[`${className}--dark`]: isDark }, 
-            {[`${className}--outlined`]: isOutlined},
-            {[`${className}--boi`]: isBtnOverImage},
-            {[`${className}--disabled`]: isDisabled},
-            className)}
-			disabled={isDisabled}
-			onClick={onClick}>
-			{children}
-		</button>
-	);
+  return (
+    <button
+      className={cn('button', className, { [`${className}--dark`]: isDark })}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 };
