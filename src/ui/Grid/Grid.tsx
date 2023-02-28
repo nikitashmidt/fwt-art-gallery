@@ -6,6 +6,7 @@ import './style.scss';
 interface IPropsGrid {
   artists: any[];
 }
+
 function Grid({ artists }: IPropsGrid) {
   return (
     <ul className={cn('grid')}>
@@ -23,4 +24,5 @@ function Grid({ artists }: IPropsGrid) {
     </ul>
   );
 }
+
 export default Grid;

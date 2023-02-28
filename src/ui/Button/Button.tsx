@@ -5,7 +5,6 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: () => void;
   isDark: boolean;
   className: string;
-  isFilled: boolean;
 }
 
 export const Button = ({

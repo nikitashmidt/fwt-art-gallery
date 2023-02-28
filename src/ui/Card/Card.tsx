@@ -25,8 +25,7 @@ export function Card({
         <div className={cn('card__info')}>
           <span className={cn('card__name')}> {name} </span>
           <time className={cn('card__date')}>
-            {' '}
-            {dateFirst} - {dateSecond}{' '}
+            {dateFirst} - {dateSecond}
           </time>
         </div>
         <div className={cn('card__arrow')}>
