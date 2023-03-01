@@ -3,18 +3,18 @@
 .card {
   @include lg {
     &:hover {
-      .card__images {
+      &__images {
         transform: scale(1.2);
       }
-	  
-      .card__arrow {
+
+      &__arrow {
         opacity: 1;
       }
     }
   }
 
   &--dark {
-    .card {
+    & {
       &__block {
         background-color: $primary-black;
       }
@@ -82,7 +82,7 @@
   }
 
   &__name {
-    @include font-cormorant(500, 12px);
+    @include font('Cormorant-Medium', 12px);
     line-height: 15px;
     text-transform: uppercase;
     color: $primary-black;
@@ -94,7 +94,7 @@
   }
 
   &__date {
-    @include font-inter(700, 8px);
+    @include font('Inter-Bold', 8px);
     line-height: 10px;
     text-transform: uppercase;
     color: $accent-red;

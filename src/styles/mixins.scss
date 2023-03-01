@@ -4,17 +4,8 @@
   justify-content: center;
 }
 
-@mixin font-inter($fontWeight, $px: 0) {
-  font-family: $font-inter;
-  font-weight: $fontWeight;
-  @if $px != 0 {
-    font-size: $px;
-  }
-}
-
-@mixin font-cormorant($fontWeight, $px: 0) {
-  font-family: $font-cormorant;
-  font-weight: $fontWeight;
+@mixin font($font, $px: 0) {
+  font-family: $font;
   @if $px != 0 {
     font-size: $px;
   }
@@ -28,21 +19,6 @@
 @mixin visibleElem {
   opacity: 1;
   visibility: visible;
-}
-
-@mixin resetBtn {
-  border: none;
-  background: none;
-  margin: 0;
-  padding: 0;
-  width: auto;
-}
-
-@mixin maxWidth1440 {
-  @include xl {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
 }
 
 @mixin svgChangeFill($fill) {

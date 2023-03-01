@@ -1,7 +1,7 @@
 import './index.scss';
 
 function App() {
-  return <div className='app'>Ketwirdas</div>;
+  return <div className='app'>фывфывфы</div>;
 }
 
 export default App;

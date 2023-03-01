@@ -8,7 +8,7 @@ body {
 .app {
   margin: 0 auto;
   height: 100%;
-  @include font-inter(300);
+  @include font('Inter-Medium', 20px);
 }
 
 .container {
@@ -26,5 +26,4 @@ body {
   @include lg {
     padding: 0 100px;
   }
-  @include maxWidth1440;
 }
