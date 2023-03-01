@@ -7,18 +7,15 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className: string;
 }
 
-export const Button = ({
-  onClick,
-  isDark,
-  className,
-  children,
-}: IButtonProps) => {
+function Button({ onClick, isDark, className, children }: IButtonProps) {
   return (
     <button
       className={cn('button', className, { [`${className}--dark`]: isDark })}
+      type='button'
       onClick={onClick}
     >
       {children}
     </button>
   );
-};
+}
+export default Button;

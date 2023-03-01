@@ -1,33 +1,39 @@
 module.exports = {
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:import/recommended',
-    'airbnb/hooks',
-    'airbnb-typescript',
-    'plugin:prettier/recommended',
-  ],
-  plugins: ['react', '@typescript-eslint'],
   env: {
     browser: true,
-    es6: true,
+    es2021: true,
   },
+  globals: {
+    React: 'readonly',
+    JSX: 'readonly',
+  },
+  extends: [
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
+    'airbnb',
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'prettier',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2020,
+    ecmaVersion: 12,
     sourceType: 'module',
     project: './tsconfig.json',
   },
+  plugins: ['@typescript-eslint', 'react', 'prettier', 'import'],
   rules: {
-    'linebreak-style': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
+    '@typescript-eslint/no-floating-promises': 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/mouse-events-have-key-events": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    'import/no-anonymous-default-export': 0,
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -37,6 +43,14 @@ module.exports = {
         ],
         "peerDependencies": true
       }
-    ]
+    ],
+
+    'react/jsx-props-no-spreading': 0,
+    'react/require-default-props': 0,
+    'react/function-component-definition': 0,
+
+
+    'prettier/prettier': [1, { endOfLine: 'auto' }],
   },
 };
+

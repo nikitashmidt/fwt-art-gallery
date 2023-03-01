@@ -1,3 +1,5 @@
 import { v4 } from 'uuid';
 
-export const newGuid = (): string => v4();
+const newGuid = (): string => v4();
+
+export default newGuid;

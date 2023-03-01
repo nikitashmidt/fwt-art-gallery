@@ -1,26 +1,30 @@
 import cn from 'classnames';
-import { newGuid } from '../../utils/guid';
+import newGuid from '../../utils/guid';
 import Card from '../Card';
 import './style.scss';
 
-interface IPropsGrid {
-  artists: any[];
+interface IArtist {
+  name: string;
+  thumbnail: string;
+  dateFirst: number;
+  dateSecond: number;
+}
+interface IGridProps {
+  artists: Array<IArtist>;
 }
 
-function Grid({ artists }: IPropsGrid) {
+function Grid({ artists }: IGridProps) {
   return (
     <ul className={cn('grid')}>
-      {artists.map((artist) => {
-        return (
-          <Card
-            key={newGuid()}
-            thumbnail={artist.thumbnail}
-            name={artist.name}
-            dateFirst={artist.dateFirst}
-            dateSecond={artist.dateSecond}
-          />
-        );
-      })}
+      {artists.map((artist) => (
+        <Card
+          key={newGuid()}
+          name={artist.name}
+          thumbnail={artist.thumbnail}
+          dateFirst={artist.dateFirst}
+          dateSecond={artist.dateSecond}
+        />
+      ))}
     </ul>
   );
 }

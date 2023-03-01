@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button } from '../ui/Button/Button';
+import Button from '../ui/Button/Button';
 
 export default {
   title: 'Example/Button',

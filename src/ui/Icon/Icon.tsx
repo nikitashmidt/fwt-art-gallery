@@ -1,5 +1,6 @@
 import { FC, DOMAttributes } from 'react';
-import { newGuid } from '../../utils/guid';
+import cn from 'classnames';
+import newGuid from '../../utils/guid';
 import { ReactComponent as Arrow } from './resources/arrow.svg';
 import { ReactComponent as ArrowDown } from './resources/arrow-down.svg';
 import { ReactComponent as LightTheme } from './resources/light-theme.svg';
@@ -12,7 +13,6 @@ import { ReactComponent as Vk } from './resources/vk.svg';
 import { ReactComponent as Hamburger } from './resources/hamburger.svg';
 import { ReactComponent as CloseBtn } from './resources/close-btn.svg';
 import { ReactComponent as Logo } from './resources/logo.svg';
-import cn from 'classnames';
 import './style.scss';
 
 export type IconType =
@@ -52,12 +52,10 @@ export interface IIconProps extends DOMAttributes<HTMLDivElement> {
 const getIcon = (type: IconType): JSX.Element =>
   iconTypes.get(type) as JSX.Element;
 
-const Icon: FC<IIconProps> = ({ className, type, ...props }) => {
-  return (
-    <div className={cn('Icon', className)} {...props}>
-      {getIcon(type)}
-    </div>
-  );
-};
+const Icon: FC<IIconProps> = ({ className, type, ...props }) => (
+  <div className={cn('Icon', className)} {...props}>
+    {getIcon(type)}
+  </div>
+);
 
 export default Icon;

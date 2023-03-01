@@ -7,19 +7,20 @@ interface IPropsCard {
   thumbnail: string;
   dateFirst: number;
   dateSecond: number;
-  onClick?: () => void;
   isDark?: boolean;
+  onHandler?: () => void;
 }
 
-export function Card({
+function Card({
   name,
   thumbnail,
   dateFirst,
   dateSecond,
   isDark,
+  onHandler,
 }: IPropsCard) {
   return (
-    <li className={cn('card', { 'card--dark': isDark })}>
+    <li className={cn('card', { 'card--dark': isDark })} onClick={onHandler}>
       <img src={thumbnail} className={cn('card__images')} alt='author icon' />
       <div className={cn('card__block')}>
         <div className={cn('card__info')}>
@@ -35,3 +36,4 @@ export function Card({
     </li>
   );
 }
+export default Card;
