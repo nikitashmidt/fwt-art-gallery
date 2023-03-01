@@ -32,7 +32,6 @@
     "deploy": "gh-pages -d build",
     "sb": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "lint": "eslint --fix --color src/",
     "prepare": "husky install"
   },
   "browserslist": {
