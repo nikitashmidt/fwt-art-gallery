@@ -1,0 +1,149 @@
+@import '../../styles';
+
+.header {
+  margin-bottom: 80px;
+  @include sm {
+    margin-bottom: 100px;
+  }
+
+  @include xl {
+    @include flex-all-center;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include xl {
+      width: 1440px;
+    }
+  }
+
+  &__logo {
+    color: $dark-gray;
+  }
+
+  &__right {
+    position: relative;
+    &-hamburger {
+      position: relative;
+      z-index: 13;
+      cursor: pointer;
+      color: $dark-gray;
+      @include md {
+        display: none;
+      }
+    }
+
+    &-menu {
+      position: fixed;
+      z-index: 12;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      height: 100vh;
+      transition: 0.4s all;
+      flex-direction: column;
+      background-color: $secondary-white;
+      @include flex-all-center;
+      @include hiddenElem;
+      gap: 52px;
+
+      &--active {
+        right: 0%;
+        @include visibleElem;
+        @include lg {
+          height: 0vh;
+        }
+      }
+
+      @include md {
+        position: relative;
+        background: none;
+        flex-direction: row-reverse;
+        align-items: center;
+        width: 100%;
+        height: 0;
+        padding: 0;
+        right: 0;
+        gap: 70px;
+        @include visibleElem;
+      }
+    }
+
+    &-theme {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      height: 40px;
+      a {
+        @include font('Inter-Bold', 12px);
+        text-transform: uppercase;
+        color: $dark-gray;
+      }
+    }
+
+    &-mode {
+      @include md {
+        display: none;
+      }
+    }
+
+    &-authorization {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+
+      @include sm {
+        gap: 40px;
+      }
+
+      @include md {
+        gap: 20px;
+        flex-direction: row;
+      }
+    }
+
+    &-login,
+    &-signup {
+      cursor: pointer;
+      transition: 0.4s all;
+      @include font('Cormorant-Bold', 32px);
+      text-transform: uppercase;
+      color: $dark-gray;
+      border: none;
+      background: none;
+      @include sm {
+        font-size: 60px;
+      }
+
+      @include md {
+        font-size: 16px;
+      }
+    }
+
+    &-overlay {
+      position: fixed;
+      transition: 0.4s all;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(3, 3, 3, 0.3);
+      @include hiddenElem;
+      pointer-events: none;
+
+      &--active {
+        @include visibleElem;
+        pointer-events: visible;
+      }
+
+      @include md {
+        display: none;
+      }
+    }
+  }
+}

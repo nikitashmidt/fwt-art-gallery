@@ -1,0 +1,73 @@
+@import '../../styles';
+
+.footer {
+  border-top: 1px solid black;
+  @include xl {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__container {
+    padding: 32px;
+    box-sizing: border-box;
+
+    @include sm {
+      padding: 40px 20px 48px 20px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    @include xl {
+      width: 1440px;
+    }
+
+    @include lg {
+      padding: 40px 100px;
+    }
+  }
+
+  &__info {
+    @include font('Inter-Light');
+    margin-bottom: 20px;
+
+    &-description {
+      font-size: 16px;
+      color: $dark-gray;
+      line-height: 140%;
+      margin: 0 0 9px 0;
+
+      @include sm {
+        width: 430px;
+        margin-bottom: 12px;
+      }
+    }
+
+    &-author {
+      color: $secondary-gray;
+    }
+
+    &-company {
+      @include font('Inter-Medium');
+      color: $dark-gray;
+      margin-left: 10px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: $dark-gray;
+      transition: 0.4s all;
+      @include lg {
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}

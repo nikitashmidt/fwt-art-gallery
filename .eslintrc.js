@@ -1,4 +1,3 @@
-
 module.exports = {
   env: {
     browser: true,
@@ -49,8 +48,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     'react/require-default-props': 0,
     'react/function-component-definition': 0,
-
-
     'prettier/prettier': [1, { endOfLine: 'auto' }],
   },
 };

@@ -1,20 +1,30 @@
 @import '../../styles';
 
 .card {
+  position: relative;
+  overflow: hidden;
+
   @include lg {
+    .card{
+      &__arrow{
+        width: 0;
+        opacity: 1;
+      }
+    }
     &:hover {
-      &__images {
+      cursor: pointer;
+      .card__images {
         transform: scale(1.2);
       }
-
-      &__arrow {
-        opacity: 1;
+      
+      .card__arrow {
+        width: 24px;
       }
     }
   }
 
   &--dark {
-    & {
+    .card {
       &__block {
         background-color: $primary-black;
       }
@@ -114,7 +124,7 @@
     @include flex-all-center;
     background-color: $accent-red;
     transition: 0.5s all;
-
+    color: $primary-light-gray;
     @include lg {
       opacity: 0;
     }

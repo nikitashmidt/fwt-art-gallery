@@ -1,5 +1,6 @@
 import cn from 'classnames';
 
+import { ReactComponent as Arrow } from '../../resources/svg/arrow.svg';
 import './style.scss';
 
 interface IPropsCard {
@@ -19,7 +20,9 @@ function Card({ name, thumbnail, date, isDark, onHandler }: IPropsCard) {
           <span className={cn('card__name')}> {name} </span>
           <time className={cn('card__date')}>{date}</time>
         </div>
-        <div className={cn('card__arrow')}>Вставь иконку</div>
+        <div className={cn('card__arrow')}>
+          <Arrow />
+        </div>
       </div>
     </div>
   );
