@@ -30,21 +30,19 @@ module.exports = {
   plugins: ['@typescript-eslint', 'react', 'prettier', 'import'],
   rules: {
     '@typescript-eslint/no-floating-promises': 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "jsx-a11y/mouse-events-have-key-events": 0, 
-    "jsx-a11y/no-static-element-interactions": 0,
-    "no-underscore-dangle": 0,
-    "react/button-has-type": 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/mouse-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'no-unsafe-assignment': 0,
+    'no-underscore-dangle': 0,
+    'react/button-has-type': 0,
     'import/no-anonymous-default-export': 0,
-    "import/no-extraneous-dependencies": [
-      "error",
+    'import/no-extraneous-dependencies': [
+      'error',
       {
-        "devDependencies": [
-          "**/*.stories.*",
-          "**/.storybook/**/*.*"
-        ],
-        "peerDependencies": true
-      }
+        devDependencies: ['**/*.stories.*', '**/.storybook/**/*.*'],
+        peerDependencies: true,
+      },
     ],
     'react/jsx-props-no-spreading': 0,
     'react/require-default-props': 0,
@@ -52,4 +50,3 @@ module.exports = {
     'prettier/prettier': [1, { endOfLine: 'auto' }],
   },
 };
-

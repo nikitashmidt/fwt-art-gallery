@@ -1,19 +1,19 @@
 import cn from 'classnames';
 
 import useTheme from '../../hooks/useTheme';
-import { IArtists } from '../../types';
+import { IArtist } from '../../types';
 import { ReactComponent as Arrow } from '../../resources/svg/arrow.svg';
 import './style.scss';
 
-interface ICardProps extends IArtists {
-  onHandler?: () => void;
+interface ICardProps extends IArtist {
+  onClick?: () => void;
 }
 
-function Card({ name, yearsOfLife, onHandler }: ICardProps) {
+function Card({ name, yearsOfLife, onClick }: ICardProps) {
   const { isDark } = useTheme();
 
   return (
-    <div onClick={onHandler} className={cn('card', { 'card--dark': isDark })}>
+    <div onClick={onClick} className={cn('card', { 'card--dark': isDark })}>
       <img className={cn('card__images')} alt='author icon' />
       <div className={cn('card__block')}>
         <div className={cn('card__info')}>

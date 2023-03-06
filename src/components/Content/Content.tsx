@@ -1,9 +1,9 @@
-import { IArtists } from '../../types';
+import { IArtist } from '../../types';
 import Grid from '../../ui/Grid';
 import './style.scss';
 import Card from '../../ui/Card';
 
-const artists: IArtists[] = [
+const artists: IArtist[] = [
   {
     genres: ['62e148104df711d4f7f68ef2', '62e148104df711d4f7f68efe'],
     _id: '62e148144df711ssd4f7f68f12',

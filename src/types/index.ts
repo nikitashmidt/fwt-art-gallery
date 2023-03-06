@@ -1,9 +1,12 @@
-export interface IArtists {
+export interface IArtist extends IPainting {
   genres: string[];
   _id: string;
   name: string;
   description: string;
   yearsOfLife: string;
+}
+
+export interface IPainting {
   mainPainting: {
     _id: string;
     name: string;

@@ -5,7 +5,8 @@ interface IAppContext {
   setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const getTheme: boolean = localStorage.getItem('isDark') === 'true';
+const theme = localStorage.getItem('isDark') as string;
+const getTheme = JSON.parse(theme) as boolean;
 
 const ThemeContext = createContext<IAppContext>({
   isDark: getTheme,
@@ -17,7 +18,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   const value = useMemo(() => ({ isDark, setIsDark }), [isDark]);
 
-  localStorage.setItem('isDark', isDark ? 'true' : 'false');
+  localStorage.setItem('isDark', String(isDark));
 
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
