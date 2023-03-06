@@ -33,6 +33,7 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/mouse-events-have-key-events": 0, 
     "jsx-a11y/no-static-element-interactions": 0,
+    "no-underscore-dangle": 0,
     "react/button-has-type": 0,
     'import/no-anonymous-default-export': 0,
     "import/no-extraneous-dependencies": [

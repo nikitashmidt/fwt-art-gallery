@@ -2,6 +2,7 @@
 
 .footer {
   border-top: 1px solid black;
+
   @include xl {
     display: flex;
     justify-content: center;
@@ -17,6 +18,7 @@
       align-items: flex-start;
       justify-content: space-between;
     }
+
     @include xl {
       width: 1440px;
     }
@@ -29,28 +31,28 @@
   &__info {
     @include font('Inter-Light');
     margin-bottom: 20px;
+  }
 
-    &-description {
-      font-size: 16px;
-      color: $dark-gray;
-      line-height: 140%;
-      margin: 0 0 9px 0;
+  &__info-description {
+    font-size: 16px;
+    color: $dark-gray;
+    line-height: 140%;
+    margin: 0 0 9px 0;
 
-      @include sm {
-        width: 430px;
-        margin-bottom: 12px;
-      }
+    @include sm {
+      width: 430px;
+      margin-bottom: 12px;
     }
+  }
 
-    &-author {
-      color: $secondary-gray;
-    }
+  &__info-author {
+    color: $secondary-gray;
+  }
 
-    &-company {
-      @include font('Inter-Medium');
-      color: $dark-gray;
-      margin-left: 10px;
-    }
+  &__info-company {
+    @include font('Inter-Medium');
+    color: $dark-gray;
+    margin-left: 10px;
   }
 
   &__social {
@@ -59,7 +61,7 @@
     align-items: center;
     gap: 20px;
 
-    a {
+    &-links {
       text-decoration: none;
       color: $dark-gray;
       transition: 0.4s all;

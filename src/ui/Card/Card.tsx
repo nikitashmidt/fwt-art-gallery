@@ -1,24 +1,24 @@
 import cn from 'classnames';
 
+import useTheme from '../../hooks/useTheme';
+import { IArtists } from '../../types';
 import { ReactComponent as Arrow } from '../../resources/svg/arrow.svg';
 import './style.scss';
 
-interface IPropsCard {
-  name: string;
-  thumbnail: string;
-  date: number;
-  isDark?: boolean;
+interface ICardProps extends IArtists {
   onHandler?: () => void;
 }
 
-function Card({ name, thumbnail, date, isDark, onHandler }: IPropsCard) {
+function Card({ name, yearsOfLife, onHandler }: ICardProps) {
+  const { isDark } = useTheme();
+
   return (
     <div onClick={onHandler} className={cn('card', { 'card--dark': isDark })}>
-      <img src={thumbnail} className={cn('card__images')} alt='author icon' />
+      <img className={cn('card__images')} alt='author icon' />
       <div className={cn('card__block')}>
         <div className={cn('card__info')}>
           <span className={cn('card__name')}> {name} </span>
-          <time className={cn('card__date')}>{date}</time>
+          <time className={cn('card__date')}> {yearsOfLife} </time>
         </div>
         <div className={cn('card__arrow')}>
           <Arrow />

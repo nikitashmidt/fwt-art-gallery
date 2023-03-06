@@ -5,20 +5,17 @@
   overflow: hidden;
 
   @include lg {
-    .card{
-      &__arrow{
-        width: 0;
-        opacity: 1;
-      }
-    }
     &:hover {
       cursor: pointer;
-      .card__images {
-        transform: scale(1.2);
-      }
-      
-      .card__arrow {
-        width: 24px;
+
+      .card {
+        &__images {
+          transform: scale(1.2);
+        }
+
+        &__arrow {
+          width: 24px;
+        }
       }
     }
   }
@@ -64,14 +61,15 @@
     background-color: $primary-white;
     z-index: 10;
     bottom: 0px;
+    transition: 0.5s all;
 
     @include sm {
       padding: 12px;
     }
 
     @include lg {
-      padding: 20px;
-      width: 70%;
+      padding: 22px;
+      width: 77%;
     }
   }
 
@@ -126,7 +124,8 @@
     transition: 0.5s all;
     color: $primary-light-gray;
     @include lg {
-      opacity: 0;
+      width: 0;
+      opacity: 1;
     }
   }
 }

@@ -3,7 +3,7 @@
 .button {
   text-transform: uppercase;
   border: none;
-  background: none;
+  background: transparent;
   cursor: pointer;
   transition: 0.5s all;
   @include font('Inter-Bold', 12px);
@@ -99,7 +99,7 @@
     gap: 12px;
     color: $dark-gray;
     padding: 0;
-    background: none;
+    background: transparent;
 
     &:not(&:disabled) {
       &:hover,
