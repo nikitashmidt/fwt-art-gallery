@@ -60,15 +60,15 @@
     justify-content: start;
     align-items: center;
     gap: 20px;
+  }
 
-    &-links {
-      text-decoration: none;
-      color: $dark-gray;
-      transition: 0.4s all;
-      @include lg {
-        &:hover {
-          transform: scale(1.2);
-        }
+  &__social-links {
+    text-decoration: none;
+    color: $dark-gray;
+    transition: 0.4s all;
+    @include lg {
+      &:hover {
+        transform: scale(1.2);
       }
     }
   }

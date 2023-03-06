@@ -20,7 +20,6 @@ function Button({
   type = 'button',
   children,
 }: IButtonProps) {
-  
   return (
     <button
       className={cn('button', className, `button--${variant}`, {
