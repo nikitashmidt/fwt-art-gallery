@@ -7,13 +7,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const { isDark } = useTheme();
 
   return (
-    <div
-      className={cn('layout', {
-        'layout--dark': isDark,
-      })}
-    >
-      {children}
-    </div>
+    <div className={cn('layout', { 'layout--dark': isDark })}>{children}</div>
   );
 };
 

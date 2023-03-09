@@ -9,7 +9,7 @@ interface ICardProps extends IArtist {
   onClick?: () => void;
 }
 
-function Card({ name, yearsOfLife, onClick }: ICardProps) {
+const Card = ({ name, yearsOfLife, onClick }: ICardProps) => {
   const { isDark } = useTheme();
 
   return (
@@ -30,6 +30,6 @@ function Card({ name, yearsOfLife, onClick }: ICardProps) {
       </div>
     </div>
   );
-}
+};
 
 export default Card;

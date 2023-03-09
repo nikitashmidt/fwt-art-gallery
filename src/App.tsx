@@ -1,3 +1,5 @@
+import cn from 'classnames';
+
 import { ThemeProvider } from './hooks/useTheme';
 import Header from './components/Header';
 import Layout from './components/Layout/Layout';
@@ -7,7 +9,7 @@ import Footer from './components/Footer';
 const App = () => (
   <ThemeProvider>
     <Layout>
-      <div className='app'>
+      <div className={cn('app')}>
         <Header />
         <main>
           <Content />

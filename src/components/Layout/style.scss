@@ -1,41 +1,7 @@
 .layout {
   transition: 0.5s all;
+
   &--dark {
     background-color: $primary-black;
-
-    .header {
-      &__logo {
-        color: $primary-light-gray;
-      }
-
-      &__right {
-        &-hamburger {
-          color: $primary-light-gray;
-        }
-
-        &-menu {
-          background-color: $primary-black;
-        }
-
-        &-mode,
-        &-login,
-        &-signup {
-          color: $primary-light-gray;
-        }
-      }
-    }
-
-    .footer {
-      border-color: $primary-light-gray;
-
-      &__info-company,
-      &__info-description {
-        color: $primary-light-gray;
-      }
-
-      &__social-links {
-        color: $primary-light-gray;
-      }
-    }
   }
 }

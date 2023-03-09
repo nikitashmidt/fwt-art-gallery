@@ -1,5 +1,5 @@
-import React from 'react';
 import cn from 'classnames';
+
 import './style.scss';
 
 type GridProps = {

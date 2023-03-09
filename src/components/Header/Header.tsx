@@ -13,27 +13,24 @@ import './style.scss';
 
 const Header = memo(() => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+
   const { isDark, setIsDark } = useTheme();
 
-  const toggleOpenMenu = () => {
-    setOpenMenu(!openMenu);
-  };
+  const toggleOpenMenu = () => setOpenMenu(!openMenu);
 
-  const toggleChangeTheme = () => {
-    setIsDark(!isDark);
-  };
+  const toggleChangeTheme = () => setIsDark(!isDark);
 
   return (
-    <header className='header'>
+    <header className={cn('header', { 'header--dark': isDark })}>
       <Modal isOpen={openMenu} />
-      <div className='container header__container'>
+      <div className={cn('container header__container')}>
         <a href='#s' className={cn('header__logo')}>
           <Logo />
         </a>
         <div className={cn('header__right')}>
           <div
             className={cn('header__right-hamburger')}
-            onClick={() => toggleOpenMenu()}
+            onClick={toggleOpenMenu}
           >
             {openMenu ? <CloseBtn /> : <Hamburger />}
           </div>
@@ -43,28 +40,28 @@ const Header = memo(() => {
             })}
           >
             <div
-              className='header__right-theme'
-              onClick={() => toggleChangeTheme()}
+              className={cn('header__right-theme')}
+              onClick={toggleChangeTheme}
             >
-              <div className='header__right-icon'>
+              <div className={cn('header__right-icon')}>
                 <Button variant='theme' isDark={isDark}>
                   {isDark ? <LightTheme /> : <DarkTheme />}
                 </Button>
               </div>
-              <a href='#s' className='header__right-mode'>
+              <a href='#s' className={cn('header__right-mode')}>
                 {isDark ? 'light mode' : 'Dark mode'}
               </a>
             </div>
-            <div className='header__right-authorization'>
-              <button className='header__right-login'>Log in</button>
-              <button className='header__right-signup'>Sign up</button>
+            <div className={cn('header__right-authorization')}>
+              <button className={cn('header__right-login')}>Log in</button>
+              <button className={cn('header__right-signup')}>Sign up</button>
             </div>
           </div>
           <div
             className={cn('header__right-overlay', {
               'header__right-overlay--active': openMenu,
             })}
-            onClick={() => toggleOpenMenu()}
+            onClick={toggleOpenMenu}
           />
         </div>
       </div>

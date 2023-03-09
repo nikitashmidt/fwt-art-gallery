@@ -1,7 +1,9 @@
+import cn from 'classnames';
+
 import { IArtist } from '../../types';
 import Grid from '../../ui/Grid';
-import './style.scss';
 import Card from '../../ui/Card';
+import './style.scss';
 
 const artists: IArtist[] = [
   {
@@ -133,8 +135,8 @@ const artists: IArtist[] = [
 ];
 
 const Content = () => (
-  <div className='content'>
-    <div className='content__container'>
+  <div className={cn('content')}>
+    <div className={cn('content__container')}>
       <Grid>
         {artists.map((item) => (
           <Card {...item} key={item._id} />

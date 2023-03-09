@@ -6,6 +6,21 @@
     justify-content: center;
   }
 
+   &--dark{
+    border-color: $primary-light-gray;
+    
+    .footer {
+      &__info-company,
+      &__info-description {
+        color: $primary-light-gray;
+      }
+
+      &__social-links {
+        color: $primary-light-gray;
+      }
+    }
+  }
+
   &__container {
     padding: 32px;
     box-sizing: border-box;

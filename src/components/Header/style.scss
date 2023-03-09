@@ -9,6 +9,30 @@
     @include flex-all-center;
   }
 
+  &--dark {
+    .header {
+      &__logo {
+        color: $primary-light-gray;
+      }
+
+      &__right {
+        &-hamburger {
+          color: $primary-light-gray;
+        }
+
+        &-menu {
+          background-color: $primary-black;
+        }
+
+        &-mode,
+        &-login,
+        &-signup {
+          color: $primary-light-gray;
+        }
+      }
+    }
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
