@@ -6,6 +6,7 @@ interface IAppContext {
 }
 
 const theme = localStorage.getItem('isDark') as string;
+
 const getTheme = JSON.parse(theme) as boolean;
 
 const ThemeContext = createContext<IAppContext>({
@@ -25,9 +26,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const useTheme = () => {
-  const value = useContext(ThemeContext);
-  return value;
-};
+const useTheme = () => useContext(ThemeContext);
 
 export default useTheme;

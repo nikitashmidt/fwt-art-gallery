@@ -14,7 +14,11 @@ function Card({ name, yearsOfLife, onClick }: ICardProps) {
 
   return (
     <div onClick={onClick} className={cn('card', { 'card--dark': isDark })}>
-      <img className={cn('card__images')} alt='author icon' />
+      <img
+        className={cn('card__images')}
+        alt='author icon'
+        src='https://media-cdn.tripadvisor.com/media/photo-s/0c/bb/a3/97/predator-ride-in-the.jpg'
+      />
       <div className={cn('card__block')}>
         <div className={cn('card__info')}>
           <span className={cn('card__name')}> {name} </span>

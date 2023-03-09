@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { memo, useState } from 'react';
 import cn from 'classnames';
 
 import { ReactComponent as Logo } from '../../resources/svg/logo.svg';
@@ -7,20 +7,25 @@ import { ReactComponent as CloseBtn } from '../../resources/svg/close-btn.svg';
 import { ReactComponent as LightTheme } from '../../resources/svg/light-theme.svg';
 import { ReactComponent as DarkTheme } from '../../resources/svg/dark-theme.svg';
 import useTheme from '../../hooks/useTheme';
+import Modal from '../Modal';
 import Button from '../../ui/Button';
 import './style.scss';
 
-const Header: FC = () => {
+const Header = memo(() => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const { isDark, setIsDark } = useTheme();
-  if (openMenu) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
+
+  const toggleOpenMenu = () => {
+    setOpenMenu(!openMenu);
+  };
+
+  const toggleChangeTheme = () => {
+    setIsDark(!isDark);
+  };
 
   return (
     <header className='header'>
+      <Modal isOpen={openMenu} />
       <div className='container header__container'>
         <a href='#s' className={cn('header__logo')}>
           <Logo />
@@ -28,7 +33,7 @@ const Header: FC = () => {
         <div className={cn('header__right')}>
           <div
             className={cn('header__right-hamburger')}
-            onClick={() => setOpenMenu(!openMenu)}
+            onClick={() => toggleOpenMenu()}
           >
             {openMenu ? <CloseBtn /> : <Hamburger />}
           </div>
@@ -39,18 +44,12 @@ const Header: FC = () => {
           >
             <div
               className='header__right-theme'
-              onClick={() => setIsDark(!isDark)}
+              onClick={() => toggleChangeTheme()}
             >
               <div className='header__right-icon'>
-                {isDark ? (
-                  <Button variant='theme' isDark>
-                    <LightTheme />
-                  </Button>
-                ) : (
-                  <Button variant='theme'>
-                    <DarkTheme />
-                  </Button>
-                )}
+                <Button variant='theme' isDark={isDark}>
+                  {isDark ? <LightTheme /> : <DarkTheme />}
+                </Button>
               </div>
               <a href='#s' className='header__right-mode'>
                 {isDark ? 'light mode' : 'Dark mode'}
@@ -65,12 +64,12 @@ const Header: FC = () => {
             className={cn('header__right-overlay', {
               'header__right-overlay--active': openMenu,
             })}
-            onClick={() => setOpenMenu(!openMenu)}
+            onClick={() => toggleOpenMenu()}
           />
         </div>
       </div>
     </header>
   );
-};
+});
 
 export default Header;

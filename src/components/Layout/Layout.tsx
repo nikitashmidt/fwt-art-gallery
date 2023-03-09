@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       className={cn('layout', {
-        dark: isDark,
+        'layout--dark': isDark,
       })}
     >
       {children}

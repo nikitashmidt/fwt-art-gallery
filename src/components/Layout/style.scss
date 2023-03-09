@@ -1,44 +1,43 @@
-@import '../../styles';
+@import '../../styles/';
 
 .layout {
   transition: 0.5s all;
-}
+  &--dark {
+    background-color: $primary-black;
 
-.layout.dark {
-  background-color: $primary-black;
-
-  .header {
-    &__logo {
-      color: $primary-light-gray;
-    }
-
-    &__right {
-      &-hamburger {
+    .header {
+      &__logo {
         color: $primary-light-gray;
       }
 
-      &-menu {
-        background-color: $primary-black;
-      }
+      &__right {
+        &-hamburger {
+          color: $primary-light-gray;
+        }
 
-      &-mode,
-      &-login,
-      &-signup {
-        color: $primary-light-gray;
+        &-menu {
+          background-color: $primary-black;
+        }
+
+        &-mode,
+        &-login,
+        &-signup {
+          color: $primary-light-gray;
+        }
       }
     }
-  }
-  .footer {
-    border-color: $primary-light-gray;
 
-    &__info {
-      &-description,
-      &-company {
+    .footer {
+      border-color: $primary-light-gray;
+
+      &__info-company,
+      &__info-description {
         color: $primary-light-gray;
       }
-    }
-    &__social a {
-      color: $primary-light-gray;
+
+      &__social-links {
+        color: $primary-light-gray;
+      }
     }
   }
 }

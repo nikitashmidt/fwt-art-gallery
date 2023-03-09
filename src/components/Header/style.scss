@@ -1,7 +1,8 @@
-@import '../../styles';
+@import '../../styles/';
 
 .header {
   margin-bottom: 80px;
+
   @include sm {
     margin-bottom: 100px;
   }
@@ -14,6 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     @include xl {
       width: 1440px;
     }
@@ -25,11 +27,13 @@
 
   &__right {
     position: relative;
+
     &-hamburger {
       position: relative;
       z-index: 13;
       cursor: pointer;
       color: $dark-gray;
+
       @include md {
         display: none;
       }
@@ -39,7 +43,8 @@
       position: fixed;
       z-index: 12;
       top: 0;
-      right: -100%;
+      right: 0;
+      transform: translateX(100%);
       width: 80%;
       height: 100vh;
       transition: 0.4s all;
@@ -50,8 +55,9 @@
       gap: 52px;
 
       &--active {
-        right: 0%;
+        transform: translateX(0%);
         @include visibleElem;
+
         @include lg {
           height: 0vh;
         }
@@ -65,7 +71,7 @@
         width: 100%;
         height: 0;
         padding: 0;
-        right: 0;
+        transform: translateX(0%);
         gap: 70px;
         @include visibleElem;
       }
@@ -77,14 +83,13 @@
       gap: 12px;
       cursor: pointer;
       height: 40px;
-      a {
-        @include font('Inter-Bold', 12px);
-        text-transform: uppercase;
-        color: $dark-gray;
-      }
     }
 
     &-mode {
+      @include font('Inter-Bold', 12px);
+      text-transform: uppercase;
+      color: $dark-gray;
+
       @include md {
         display: none;
       }
@@ -115,6 +120,7 @@
       color: $dark-gray;
       border: none;
       background: none;
+
       @include sm {
         font-size: 60px;
       }

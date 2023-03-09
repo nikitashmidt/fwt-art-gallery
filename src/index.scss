@@ -12,6 +12,7 @@
 
 .container {
   padding: 24px 20px;
+  
   @include sm {
     padding: 36px 20px;
   }

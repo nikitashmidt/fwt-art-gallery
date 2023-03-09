@@ -1,9 +1,8 @@
-import Header from './components/Header';
 import { ThemeProvider } from './hooks/useTheme';
+import Header from './components/Header';
 import Layout from './components/Layout/Layout';
 import Content from './components/Content';
 import Footer from './components/Footer';
-import './index.scss';
 
 const App = () => (
   <ThemeProvider>
