@@ -1,6 +1,4 @@
-@import './styles/';
-
-body {
+* {
   box-sizing: border-box;
   margin: 0;
 }
@@ -8,14 +6,15 @@ body {
 .app {
   margin: 0 auto;
   height: 100%;
-  @include font('Inter-Medium', 20px);
 }
 
 .container {
   padding: 24px 20px;
+
   @include sm {
     padding: 36px 20px;
   }
+
   @include lg {
     padding: 32px 100px;
   }

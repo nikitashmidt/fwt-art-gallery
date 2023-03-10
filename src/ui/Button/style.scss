@@ -1,8 +1,7 @@
-@import '../../styles';
-
 .button {
   text-transform: uppercase;
   border: none;
+  background: transparent;
   cursor: pointer;
   transition: 0.5s all;
   @include font('Inter-Bold', 12px);
@@ -13,7 +12,6 @@
         background-color: $accent-gold;
 
         &:not(&:disabled) {
-
           &:hover,
           &:focus {
             color: $primary-white;
@@ -26,7 +24,6 @@
         color: $primary-light-gray;
 
         &:not(&:disabled) {
-
           &:hover,
           &:focus {
             color: $primary-white;
@@ -43,7 +40,6 @@
         @include svgChangeFill($primary-light-gray);
 
         &:not(&:disabled) {
-
           &:hover,
           &:focus {
             @include svgChangeFill($primary-white);
@@ -56,9 +52,8 @@
       }
 
       &--theme {
-        @include circle(40px, $secondary-black);
         @include svgChangeFill($primary-light-gray);
-
+        background-color: $secondary-black;
         &:not(&:disabled) {
           &:hover {
             @include svgChangeFill($primary-white);
@@ -85,7 +80,6 @@
     border-radius: 30px;
 
     &:not(&:disabled) {
-
       &:hover,
       &:focus {
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -103,7 +97,7 @@
     gap: 12px;
     color: $dark-gray;
     padding: 0;
-    background: none;
+    background: transparent;
 
     &:not(&:disabled) {
       &:hover,
@@ -140,7 +134,7 @@
 
   &--theme {
     @include svgChangeFill($dark-gray);
-
+    @include circle(40px, $secondary-white);
     &:hover {
       @include svgChangeFill($primary-black);
     }

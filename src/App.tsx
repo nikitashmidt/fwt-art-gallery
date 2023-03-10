@@ -1,7 +1,13 @@
-import './index.scss';
+import Layout from './components/Layout';
+import Content from './components/Content';
+import { ThemeProvider } from './hooks/useTheme';
 
-function App() {
-  return <div className='app'>фывфывфы</div>;
-}
+const App = () => (
+  <ThemeProvider>
+    <Layout>
+      <Content />
+    </Layout>
+  </ThemeProvider>
+);
 
 export default App;

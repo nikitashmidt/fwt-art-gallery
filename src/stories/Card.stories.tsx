@@ -12,7 +12,3 @@ export default {
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const Dark = Template.bind({});
-
-Dark.args = {
-  isDark: true,
-};
