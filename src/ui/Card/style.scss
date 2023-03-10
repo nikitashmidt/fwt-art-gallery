@@ -2,18 +2,18 @@
   position: relative;
   overflow: hidden;
 
-  @include lg {
-    &:hover {
-      cursor: pointer;
+  &:hover {
+    @include lg {
+    }
+    cursor: pointer;
 
-      .card {
-        &__images {
-          transform: scale(1.2);
-        }
+    .card {
+      &__images {
+        transform: scale(1.2);
+      }
 
-        &__arrow {
-          width: 24px;
-        }
+      &__arrow {
+        width: 24px;
       }
     }
   }

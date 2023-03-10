@@ -18,7 +18,6 @@ const artists: IArtist[] = [
       name: 'Evening on Karl Johan Street',
       yearOfCreation: 1892,
       image: {
-        _id: '62e148174df711d4f7f68f29',
         src: '/images/62e148164df711d4f7f68f1d/image.jpg',
         webp: '/images/62e148164df711d4f7f68f1d/image.webp',
         src2x: '/images/62e148164df711d4f7f68f1d/image2x.jpg',
@@ -39,7 +38,6 @@ const artists: IArtist[] = [
       name: 'Evening on Karl Johan Street',
       yearOfCreation: 1892,
       image: {
-        _id: '62e148174df711d4f7f68f29',
         src: '/images/62e148164df711d4f7f68f1d/image.jpg',
         webp: '/images/62e148164df711d4f7f68f1d/image.webp',
         src2x: '/images/62e148164df711d4f7f68f1d/image2x.jpg',
@@ -60,7 +58,6 @@ const artists: IArtist[] = [
       name: 'Evening on Karl Johan Street',
       yearOfCreation: 1892,
       image: {
-        _id: '62e148174df711d4f7f68f29',
         src: '/images/62e148164df711d4f7f68f1d/image.jpg',
         webp: '/images/62e148164df711d4f7f68f1d/image.webp',
         src2x: '/images/62e148164df711d4f7f68f1d/image2x.jpg',
@@ -81,7 +78,6 @@ const artists: IArtist[] = [
       name: 'Evening on Karl Johan Street',
       yearOfCreation: 1892,
       image: {
-        _id: '62e148174df711d4f7f68f29',
         src: '/images/62e148164df711d4f7f68f1d/image.jpg',
         webp: '/images/62e148164df711d4f7f68f1d/image.webp',
         src2x: '/images/62e148164df711d4f7f68f1d/image2x.jpg',
@@ -102,7 +98,6 @@ const artists: IArtist[] = [
       name: 'Evening on Karl Johan Street',
       yearOfCreation: 1892,
       image: {
-        _id: '62e148174df711d4f7f68f29',
         src: '/images/62e148164df711d4f7f68f1d/image.jpg',
         webp: '/images/62e148164df711d4f7f68f1d/image.webp',
         src2x: '/images/62e148164df711d4f7f68f1d/image2x.jpg',
@@ -123,7 +118,6 @@ const artists: IArtist[] = [
       name: 'Evening on Karl Johan Street',
       yearOfCreation: 1892,
       image: {
-        _id: '62e148174df711d4f7f68f29',
         src: '/images/62e148164df711d4f7f68f1d/image.jpg',
         webp: '/images/62e148164df711d4f7f68f1d/image.webp',
         src2x: '/images/62e148164df711d4f7f68f1d/image2x.jpg',

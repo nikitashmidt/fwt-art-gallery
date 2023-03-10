@@ -12,7 +12,6 @@ export interface IPainting {
   name: string;
   yearOfCreation: number;
   image: {
-    _id: string;
     src?: string;
     webp?: string;
     src2x?: string;

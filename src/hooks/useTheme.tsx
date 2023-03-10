@@ -1,8 +1,14 @@
-import { createContext, useContext, useState, useMemo } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useCallback,
+} from 'react';
 
 interface IAppContext {
   isDark: boolean;
-  setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
+  toggleTheme: (isDark: boolean) => void;
 }
 
 const theme = localStorage.getItem('isDark') as string;
@@ -11,15 +17,18 @@ const getTheme = JSON.parse(theme) as boolean;
 
 const ThemeContext = createContext<IAppContext>({
   isDark: getTheme,
-  setIsDark: (isDark) => !isDark,
+  toggleTheme: (isDark) => isDark,
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [isDark, setIsDark] = useState<boolean>(getTheme);
 
-  const value = useMemo(() => ({ isDark, setIsDark }), [isDark]);
+  const toggleTheme = useCallback(() => {
+    setIsDark(!isDark);
+    localStorage.setItem('isDark', String(!isDark));
+  }, [isDark]);
 
-  localStorage.setItem('isDark', String(isDark));
+  const value = useMemo(() => ({ isDark, toggleTheme }), [isDark, toggleTheme]);
 
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
