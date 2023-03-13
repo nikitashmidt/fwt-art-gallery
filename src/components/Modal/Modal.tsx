@@ -1,5 +1,5 @@
-import cn from 'classnames';
 import { useEffect } from 'react';
+import cn from 'classnames';
 
 interface IModalProps {
   isOpen: boolean;
@@ -12,6 +12,7 @@ const Modal = ({ isOpen, children }: IModalProps) => {
       const paddingOffset = `${
         window.innerWidth - document.body.offsetWidth
       }px`;
+
       document.body.style.overflow = 'hidden';
       document.body.style.paddingRight = paddingOffset;
     } else {

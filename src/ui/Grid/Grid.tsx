@@ -2,11 +2,11 @@ import cn from 'classnames';
 
 import './style.scss';
 
-type GridProps = {
+interface IGridProps {
   children: React.ReactNode;
-};
+}
 
-const Grid = ({ children }: GridProps) => (
+const Grid = ({ children }: IGridProps) => (
   <ul className={cn('grid')}>{children}</ul>
 );
 

@@ -1,0 +1,128 @@
+.loader {
+  transform: rotate(90deg) translate(-50%);
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  stroke: $primary-black;
+
+  &--dark {
+    stroke: $primary-light-gray;
+  }
+
+  &__svg {
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.path,
+.path2,
+.path3,
+.path4 {
+  opacity: 35%;
+  stroke-linecap: round;
+}
+
+.path {
+  opacity: 80%;
+  animation: dash 2s linear infinite;
+}
+
+.path2 {
+  animation: dash2 2s linear infinite;
+}
+
+.path3 {
+  animation: dash3 2s linear infinite;
+}
+
+.path4 {
+  animation: dash4 2s linear infinite;
+}
+
+// безусловно хочется как-то еще оптимизировать код
+// но в мою стажерскую голову пока не пришли идеи получше, чем сделать так как имеется, возможно стоит обсудить этот момент 
+
+@mixin strokeOffset ($array: 1, $offset: 0 ) {
+  stroke-dasharray: $array, 150;
+  stroke-dashoffset: $offset;
+}
+
+@keyframes dash {
+  0% {
+    @include strokeOffset;
+  }
+
+  50% {
+    @include strokeOffset(58, -45)
+  }
+
+  80% {
+    @include strokeOffset(90, -124)
+  }
+
+  100% {
+    @include strokeOffset(110, -124)
+  }
+}
+
+@keyframes dash2 {
+  0% { @include strokeOffset }
+
+  50% {
+    @include strokeOffset(58, -27)
+  }
+
+  80% {
+    @include strokeOffset(80, -124)
+  }
+
+  100% {
+    @include strokeOffset(100, -124)
+  }
+}
+
+@keyframes dash3 {
+  0% { @include strokeOffset }
+
+  50% {
+    @include strokeOffset(78, -3)
+  }
+
+  80% {
+    @include strokeOffset(90, -124)
+  }
+
+  100% {
+    @include strokeOffset(100, -124)
+  }
+}
+
+@keyframes dash4 {
+  0% { @include strokeOffset }
+
+  50% {
+    @include strokeOffset(80, -14)
+  }
+
+  80% {
+    @include strokeOffset(90, -124)
+  }
+
+  100% {
+    @include strokeOffset(100, -124)
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

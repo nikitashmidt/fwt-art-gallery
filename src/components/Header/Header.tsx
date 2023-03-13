@@ -1,14 +1,14 @@
 import { memo, useState } from 'react';
 import cn from 'classnames';
 
-import { ReactComponent as Logo } from '../../resources/svg/logo.svg';
-import { ReactComponent as Hamburger } from '../../resources/svg/hamburger.svg';
-import { ReactComponent as CloseBtn } from '../../resources/svg/close-btn.svg';
-import { ReactComponent as LightTheme } from '../../resources/svg/light-theme.svg';
-import { ReactComponent as DarkTheme } from '../../resources/svg/dark-theme.svg';
-import useTheme from '../../hooks/useTheme';
-import Modal from '../Modal';
-import Button from '../../ui/Button';
+import Modal from '@components/Modal';
+import Button from '@/ui/Button';
+import { ReactComponent as Logo } from '@/resources/svg/logo.svg';
+import { ReactComponent as Hamburger } from '@/resources/svg/hamburger.svg';
+import { ReactComponent as CloseBtn } from '@/resources/svg/close-btn.svg';
+import { ReactComponent as LightTheme } from '@/resources/svg/light-theme.svg';
+import { ReactComponent as DarkTheme } from '@/resources/svg/dark-theme.svg';
+import useTheme from '@/hooks/useTheme';
 import './style.scss';
 
 const Header = memo(() => {
