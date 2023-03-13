@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Card from '../ui/Card';
+import Card from '@/ui/Card';
 
 export default {
   title: 'Example/Card',
@@ -11,4 +11,4 @@ export default {
 
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
-export const Dark = Template.bind({});
+export const isDark = Template.bind({});

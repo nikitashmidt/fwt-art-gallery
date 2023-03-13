@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import cn from 'classnames';
 
-import { ReactComponent as Facebook } from '../../resources/svg/facebook.svg';
-import { ReactComponent as Instagram } from '../../resources/svg/inst.svg';
-import { ReactComponent as Vk } from '../../resources/svg/vk.svg';
-import useTheme from '../../hooks/useTheme';
+import { ReactComponent as Facebook } from '@/resources/svg/facebook.svg';
+import { ReactComponent as Instagram } from '@/resources/svg/inst.svg';
+import { ReactComponent as Vk } from '@/resources/svg/vk.svg';
+import useTheme from '@/hooks/useTheme';
 import './style.scss';
 
 const Footer = memo(() => {
